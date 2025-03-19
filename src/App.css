@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background: #f8f9fa;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background: #f8f9fa;
+    z-index: 1000;
+  }
+
+  .sidebar-content {
+    display: none;
+  }
+
+  .sidebar.open .sidebar-content {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #f8f9fa;
+    padding: 10px;
+  }
+}
+
+
+
+.canvas {
+  flex-grow: 1;
+  height: 100vh;
+  background: #e9ecef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-node {
+  position: relative;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 120px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.custom-node input {
+  border: none;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+.delete-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+}
+
+.react-flow__handle {
+  width: 8px;
+  height: 8px;
+  background: #555;
+  border-radius: 50%;
+}
+
+
+@media (max-width: 768px) {
+  .canvas {
+    margin-top: 50px; 
+    height: calc(100vh - 50px);
+  }
+}
+.draggable-node {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: grab; 
+  user-select: none; 
+  transition: background 0.2s ease-in-out;
+}
+
+.draggable-node:active {
+  cursor: grabbing;
+  background: #0056b3;
+}
+
+
+
+
